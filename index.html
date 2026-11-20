@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="calculator-card">
+    <section id="calculator-view" class="view">
+      <h1>BMI Calculator</h1>
+      <p class="subtitle">Enter your height and weight to calculate your Body Mass Index.</p>
+
+      <div class="input-group">
+        <label for="height">
+          <span class="icon icon-height" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 15 15 4l5 5L9 20z"></path>
+              <path d="m8 11 2 2"></path>
+              <path d="m11 8 2 2"></path>
+              <path d="m14 5 2 2"></path>
+            </svg>
+          </span>
+          <span>Height (cm)</span>
+        </label>
+        <input type="number" id="height" placeholder="Example: 175" step="any">
+      </div>
+
+      <div class="input-group">
+        <label for="weight">
+          <span class="icon icon-weight" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 9h14l2 11H3z"></path>
+              <path d="M9 9a3 3 0 0 1 6 0"></path>
+              <path d="M12 12v3"></path>
+            </svg>
+          </span>
+          <span>Weight (kg)</span>
+        </label>
+        <input type="number" id="weight" placeholder="Example: 70" step="any">
+      </div>
+
+      <p id="error-message" class="error-message" aria-live="polite"></p>
+
+      <div class="button-group">
+        <button type="button" id="calculate-button" class="button primary">Calculate BMI</button>
+        <button type="button" id="reset-button" class="button secondary">Reset</button>
+      </div>
+    </section>
+
+    <section id="result-view" class="view result-view" hidden aria-live="polite">
+      <span class="icon icon-result" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 8.5c0 4.5-8 10-8 10s-8-5.5-8-10a4.5 4.5 0 0 1 8-2.8 4.5 4.5 0 0 1 8 2.8z"></path>
+        </svg>
+      </span>
+      <h1>Your BMI Result</h1>
+      <p class="subtitle">Here is your Body Mass Index.</p>
+
+      <div class="result-panel">
+        <p class="bmi-label">BMI</p>
+        <p id="bmi-value" class="bmi-value">--</p>
+        <p id="bmi-category" class="bmi-category"></p>
+      </div>
+
+      <button type="button" id="result-reset-button" class="button secondary full-width">Reset</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

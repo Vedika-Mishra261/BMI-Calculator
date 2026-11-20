@@ -1,0 +1,259 @@
+:root {
+  --alabaster: #faf8f5;
+  --cream: #ffffff;
+  --sage: #4d7c6f;
+  --coral: #f47264;
+  --espresso: #292524;
+  --muted: #7a7169;
+  --sage-tint: #e8f1ec;
+  --coral-tint: #fde9e5;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  background:
+    radial-gradient(circle at 12% 16%, var(--sage-tint) 0, transparent 32%),
+    radial-gradient(circle at 88% 84%, var(--coral-tint) 0, transparent 30%),
+    var(--alabaster);
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  color: var(--espresso);
+}
+
+.calculator-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 34px 32px;
+  background: var(--cream);
+  border: 1px solid #efe8df;
+  border-radius: 36px 28px 40px 24px / 28px 40px 24px 36px;
+  box-shadow: 0 16px 36px rgba(41, 37, 36, 0.08);
+}
+
+.view[hidden] {
+  display: none;
+}
+
+h1 {
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+
+.input-group {
+  margin-bottom: 18px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.icon {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.icon-height {
+  background: var(--sage-tint);
+  color: var(--sage);
+}
+
+.icon-weight {
+  background: var(--coral-tint);
+  color: var(--coral);
+}
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 16px;
+  font-family: inherit;
+  color: var(--espresso);
+  background: var(--cream);
+  border: 1px solid #e6ded5;
+  border-radius: 18px 22px 18px 22px / 22px 18px 22px 18px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input::placeholder {
+  color: #ada49b;
+}
+
+input:focus {
+  border-color: var(--sage);
+  box-shadow: 0 0 0 4px rgba(77, 124, 111, 0.14);
+}
+
+input.invalid {
+  border-color: var(--coral);
+}
+
+.error-message {
+  min-height: 20px;
+  font-size: 13px;
+  color: #b4473b;
+  margin-bottom: 12px;
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
+}
+
+.button {
+  flex: 1;
+  padding: 14px 16px;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: inherit;
+  border-radius: 20px 16px 22px 16px / 16px 22px 16px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.primary {
+  background: var(--coral);
+  color: var(--espresso);
+}
+
+.primary:hover {
+  background: #ed6456;
+}
+
+.secondary {
+  background: var(--sage-tint);
+  color: var(--sage);
+}
+
+.secondary:hover {
+  background: #dbe9e2;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.result-view {
+  text-align: center;
+}
+
+.icon-result {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 18px;
+  background: var(--sage-tint);
+  color: var(--sage);
+  border-radius: 50% 45% 52% 48% / 48% 52% 45% 50%;
+}
+
+.icon-result svg {
+  width: 32px;
+  height: 32px;
+}
+
+.result-panel {
+  padding: 24px 20px;
+  margin-bottom: 24px;
+  background: #f5f8f5;
+  border-radius: 32px 24px 36px 22px / 24px 36px 22px 32px;
+}
+
+.bmi-label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.bmi-value {
+  font-size: 52px;
+  font-weight: bold;
+  line-height: 1.2;
+  color: var(--espresso);
+}
+
+.bmi-category {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 7px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 20px;
+  background: var(--sage-tint);
+  color: var(--sage);
+}
+
+.bmi-category.underweight {
+  background: var(--coral-tint);
+  color: #a1503f;
+}
+
+.bmi-category.normal {
+  background: var(--sage-tint);
+  color: #3b6b5d;
+}
+
+.bmi-category.overweight {
+  background: #f9edd7;
+  color: #8a6320;
+}
+
+.bmi-category.obese {
+  background: #f9ddda;
+  color: #a1503f;
+}
+
+@media (max-width: 480px) {
+  .calculator-card {
+    padding: 28px 20px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .bmi-value {
+    font-size: 44px;
+  }
+}
